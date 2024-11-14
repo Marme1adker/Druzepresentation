@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>דרוזים</title>
+</head>
+<body class="bodyind" onclick="playAudio()">
+<audio id="presentationAudio" src="sound.mp3" preload="auto"></audio>
+<a href="firstslide.html">
+    <h1 class="hone"><button onclick="startPresentation()" class="action-button">להתחיל את המצגת</button></h1>
+</a>
+<audio id="myAudio" src="checksound.mp3" preload="auto"></audio>
+<script>
+    function playAudio() {
+        const audio = document.getElementById("myAudio");
+        audio.play().catch(error => {
+            console.log("Не удалось воспроизвести аудио:", error);
+        });
+    }
+</script>
+</body>
+</html>

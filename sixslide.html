@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>סיכום💀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bady" onclick="playAudio()">
+
+<div class="sixcont">
+    <h1 class="sixh">
+        סיכום
+    </h1>
+    <p class="sixp">
+        .הדרוזים בישראל תורמים רבות לחברה, הן בשירותם הצבאי והן בתחומים אזרחיים. הם שומרים על תרבות ודת ייחודית, ומיוחדים בכך שהם משתלבים בחברה הישראלית תוך שמירה על מסורתם
+
+    </p>
+</div>
+
+<audio id="myAudio" src="sixsound.mp3" preload="auto"></audio>
+<script>
+    function playAudio() {
+        const audio = document.getElementById("myAudio");
+        audio.play().catch(error => {
+            console.log("Не удалось воспроизвести аудио:", error);
+        });
+    }
+</script>
+</script>
+</body>
+</html>

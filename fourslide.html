@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>🤗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bady" onclick="playAudio()">
+    <div class="fourcont">
+        <h1 class="hfour">הדרוזים בישראל</h1>
+        <div class="infofour">
+            <ul><li class="list">
+                <p id="fpone">.הדרוזים משתלבים בחברה בצורה פעילה ומשמעותית</p>
+            </li>
+            <li class="list">
+                <p id="fptwo">.רבים מהם משרתים בצה"ל ובמערכות המדינה</p>
+            </li>
+            <li class="list">
+                <p id="fpfive">.תורמים לביטחון ולפיתוח החברה</p>
+            </li>
+            <li class="list">
+                <p id="fpthree">.שירותם הצבאי נחשב לחובה על פי המסורת הדתית</p>
+            </li>
+            <li class="list">
+                <p id="fpfour">.מעורבים במגוון תחומים אזרחיים: חינוך, בריאות ומדינה</p>
+            </li>
+            </ul>
+        </div>
+    <div class="fourimgs">
+        <img src="https://avatars.dzeninfra.ru/get-zen_doc/1779726/pub_5e48b569aad38b32664afc2f_5e48c62be1f3c67ff238b62a/scale_1200" height="250px">
+    </div>
+</div>
+    <audio id="myAudio" src="foursound.MP3" preload="auto"></audio>
+    <script>
+        function playAudio() {
+            const audio = document.getElementById("myAudio");
+            audio.play().catch(error => {
+                console.log("Не удалось воспроизвести аудио:", error);
+            });
+        }
+    </script>
+    <script>
+        // Получаем аудио элемент по ID
+        var audio = document.getElementById("myAudio");
+
+        // Добавляем слушатель события на окончание проигрывания
+        audio.onended = function() {
+            // Перенаправляем на secondslide.html
+            window.location.href = "fiveslide.html";
+        };
+    </script>
+</body>
+</html>

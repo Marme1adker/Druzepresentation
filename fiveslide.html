@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>🤗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bady" onclick="playAudio()">
+
+<div class="fivecont">
+  <h1 class="hfive">
+    עובדות מעניינות
+  </h1>
+  <div class="listcont">
+    <ul>
+      <li id="lo">.הדת הדרוזית היא דת מונוטאיסטית – הדת מבוססת על אמונה באל אחד ונפרדת מהאסלאם</li>
+      <li id="lt">.הדרוזים בישראל משרתים בצה"ל – רבים מתגייסים לצה"ל ומשמשים בתפקידים קרביים</li>
+      <li id="lth">.הדרוזים שומרים על תרבות ייחודית – כולל חגיגות דתיות ופולחנים מסורתיים</li>
+      <li id="lf">.הדרוזים חיים גם במדינות נוספות – סוריה, לבנון וירדן, ויש קהילות בארה"ב ובקנדה</li>
+      <li id="lfi">.הדרוזים שומרים על סודיות הדת – עקרון מרכזי של הדת הדרוזית הוא שמירה על סודיות עקרונות הדת</li>
+    </ul>
+  </div>
+</div>
+<div class="imgcontfive">
+  <img id="fimgf" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Flag_of_Druze.svg/1200px-Flag_of_Druze.svg.png" height="200px" width="350" alt="">
+  <img id="timgf" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq9SQZT4YdHzyOL4g2CY1F-pmQrxdsjT0hZQ&s" height="200px" alt="">
+  <img id="ttimgf" src="https://www.israelhayom.co.il/wp-content/uploads/2022/03/21/1555492303587_b-960x640.jpg" height="200px" alt="">
+</div>
+
+
+<audio id="myAudio" src="fivesound.mp3" preload="auto"></audio>
+<script>
+  function playAudio() {
+    const audio = document.getElementById("myAudio");
+    audio.play().catch(error => {
+      console.log("Не удалось воспроизвести аудио:", error);
+    });
+  }
+</script>
+<script>
+  // Получаем аудио элемент по ID
+  var audio = document.getElementById("myAudio");
+
+  // Добавляем слушатель события на окончание проигрывания
+  audio.onended = function() {
+    // Перенаправляем на secondslide.html
+    window.location.href = "sixslide.html";
+  };
+</script>
+</body>
+</html>

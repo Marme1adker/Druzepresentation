@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>דרוזים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bady" onclick="playAudio()">
+    <div class="container">
+        <h1 class="mone">היסטוריה ודת</h1>
+        <p class="rone">.הדת הדרוזית התפתחה במזרח התיכון במאה ה-11 ונחשבת דת סודית וסגורה</p>
+        <div class="imgs">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Flag_of_Druze.svg" width="300px" height="200px" alt="">
+        <img src="middle-east.png" height="200px" alt="">
+        </div>
+    </div>
+    <audio id="myAudio" src="secsound.MP3" preload="auto"></audio>
+    <script>
+        function playAudio() {
+            const audio = document.getElementById("myAudio");
+            audio.play().catch(error => {
+                console.log("Не удалось воспроизвести аудио:", error);
+            });
+        }
+    </script>
+    <script>
+        // Получаем аудио элемент по ID
+        var audio = document.getElementById("myAudio");
+
+        // Добавляем слушатель события на окончание проигрывания
+        audio.onended = function() {
+            // Перенаправляем на secondslide.html
+            window.location.href = "thirdslide.html";
+        };
+    </script>
+</body>
+</html>

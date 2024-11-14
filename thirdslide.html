@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>🤗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bady" onclick="playAudio()">
+    <div class="thirdcont">
+        <h1 class="hth">חברה ומבנה חברתי</h1>
+        <p class="pth">
+            .לקהילה הדרוזית יש מבנה חברתי ייחודי עם דגש על משפחה, כבוד ואחדות הקהילה
+        </p>
+    </div>
+    <div class="imgsth">
+        <div class="imgimg">
+            <img src="https://www.now14.co.il/wp-content/uploads/2020/08/WhatsApp-Image-2018-02-03-at-22.06.50.jpeg" height="300px" alt="">
+            <img src="https://img.haarets.co.il/bs/0000017f-f8cd-d460-afff-fbef74d30000/19/5f/aa2572612f85823b5fdf9c0dae2a/3749127544.jpg?precrop=2446,1422,x0,y212&width=420&height=244&cmsprod" height="300px" alt="">
+        </div>
+    </div>
+    <audio id="myAudio" src="thirdsound.MP3" preload="auto"></audio>
+    <script>
+        function playAudio() {
+            const audio = document.getElementById("myAudio");
+            audio.play().catch(error => {
+                console.log("Не удалось воспроизвести аудио:", error);
+            });
+        }
+    </script>
+    <script>
+        // Получаем аудио элемент по ID
+        var audio = document.getElementById("myAudio");
+
+        // Добавляем слушатель события на окончание проигрывания
+        audio.onended = function() {
+            // Перенаправляем на secondslide.html
+            window.location.href = "fourslide.html";
+        };
+    </script>
+</body>
+</html>

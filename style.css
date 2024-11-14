@@ -1,0 +1,462 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0 auto;
+    padding: 0 15px;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+}
+h1, p{
+    color: #e1e1e1;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 10;
+    transition: opacity 0.5s;
+}
+
+/* Стиль для скрытия overlay */
+#overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.bodyind{
+    background: linear-gradient(to right, #ff9d9d, #9f9fff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+.hone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.action-button{
+    background: #ffe57f;
+    font-size: 60px;
+    height: 100px;
+    border: 0;
+    box-shadow: black 2px 2px 15px;
+    transition: font-size 0.17s ease-in-out, height 0.17s ease-in-out, box-shadow 0.17s ease-in-out;
+}
+.action-button:hover{
+    font-size: 67px;
+    height: 125px;
+    box-shadow: black 5px 5px 23px;
+}
+
+.bady{
+    background: #1a1a1a;
+    height: 100vh;
+}
+.container{
+    background-color: rgba(55, 26, 26, 0);
+    display: flex;
+    height: 50%;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+}
+.hoto {
+    animation: 4.3s ease-in-out slideIn;
+    font-size: 55px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+}
+.pone {
+    font-size: 35px;
+    animation-name: poyavlenie;
+    animation-duration: 2s;
+    animation-delay: 4.5s;
+    animation-fill-mode: backwards;
+}
+
+.playButton{
+    display: flex;
+    justify-content: end;
+}
+
+.mone {
+    animation: 2s ease-in-out poyavlenie;
+    font-size: 55px;
+}
+
+.rone {
+    font-size: 35px;
+    animation-name: poyavlenie;
+    animation-duration: 2s;
+    animation-delay: 3.5s;
+    animation-fill-mode: backwards;
+}
+.imgs{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transform: scale(0.8);
+    visibility: hidden;
+    animation: zoomIn 1s ease-out 3.5s forwards;  /* Задержка 3 секунды */
+
+}
+.imgs{
+    object-fit: cover;
+}
+
+.thirdcont{
+    display: flex;
+    height: 50%;
+    float: left;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hth{
+    font-size: 65px;
+    opacity: 0;
+    animation: slideInText 3s ease-out forwards, colorChange 3s ease-in-out infinite;
+}
+.pth{
+    opacity: 0;
+    animation: pulseIn 2s ease-in-out forwards, fadeIn 1.5s ease-out forwards;
+    font-size: 35px;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
+}
+.imgsth{
+    display: flex;
+    height: 100vh;
+    float: right;
+    justify-content: space-between;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(100px); /* Начинаем с правой стороны */
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.imgimg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.fourcont{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.hfour{
+    font-size: 65px;
+    opacity: 0;
+    animation: fadeInSlow 3s ease-in forwards;
+}
+.infofour{
+    font-size: 35px;
+}
+
+.fourimgs{
+}
+#fpone, #fptwo, #fpthree, #fpfour, #fpfive{
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1.5s ease-out forwards;
+}
+#fpone{
+    animation-delay: 2.3s;
+    animation-fill-mode: forwards;
+}
+#fptwo{
+    animation-delay: 7.30s;
+    animation-fill-mode: forwards;
+}
+#fpfive{
+    animation-delay: 12s;
+    animation-fill-mode: forwards;
+}
+#fpthree{
+    animation-delay: 15.22s;
+    animation-fill-mode: forwards;
+}
+#fpfour{
+    animation-delay: 19.32s;
+    animation-fill-mode: forwards;
+}
+
+.fivecont{
+    flex-direction: column;
+    display: flex;
+    float: right;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+.hfive{
+    font-size: 65px;
+    display: flex;
+    opacity: 0;
+    animation: fadeInSlow 3s ease-in forwards;
+}
+.listcont{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 25px;
+}
+.imgcontfive{
+    display: flex;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(100px); /* Начинаем с правой стороны */
+    animation: slideInRight 1s ease-out forwards;
+}
+#lo, #lt, #lth, #lf, #lfi{
+        opacity: 0;
+        transform: translateY(50px);
+        animation: slideUp 1.5s ease-out forwards;
+
+}
+#lo{
+    animation-delay: 2.3s;
+    animation-fill-mode: forwards;
+}
+#lt{
+    animation-delay: 9.40s;
+    animation-fill-mode: forwards;
+}
+#lth{
+    animation-delay: 16.40s;
+    animation-fill-mode: forwards;
+}
+#lf{
+    animation-delay: 23.06s;
+    animation-fill-mode: forwards;
+}
+#lfi{
+    animation-delay: 31.10s;
+    animation-fill-mode: forwards;
+}
+#fimgf, #timgf, #ttimgf{
+    object-fit: cover;
+    overflow: hidden;
+    transform: scale(0.8);
+    visibility: hidden;
+    animation: zoomIn 1s ease-out forwards;  /* Задержка 3 секунды */
+}
+#fimgf{
+    animation-delay: 2.3s;
+    animation-fill-mode: forwards;
+}
+#timgf{
+    animation-delay: 9.40s;
+    animation-fill-mode: forwards;
+}
+#ttimgf{
+    animation-delay: 16.40s;
+    animation-fill-mode: forwards;
+}
+
+.sixcont{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
+}
+.sixh{
+    font-size: 65px;
+}
+.sixp{
+    font-size: 27px;
+}
+
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes fadeInSlow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100px); /* Начинаем за пределами экрана */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Сдвигаем в исходное положение */
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(500px); /* Начинаем анимацию с 500px вниз */
+    }
+    to {
+        transform: translateY(0); /* Заканчиваем анимацию на позиции */
+    }
+}
+@keyframes poyavlenie {
+    from{
+        color: transparent;
+    }
+    to{
+        color: #B8B8B8FF;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        visibility: hidden;  /* Скрыто на старте */
+    }
+    10% {
+        visibility: visible;  /* Сделать видимым через 10% времени */
+    }
+    100% {
+        transform: scale(1);
+        visibility: visible;  /* Видимое на конце */
+    }
+}
+
+@keyframes slideInText {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Анимация изменения цвета */
+@keyframes colorChange {
+    0% {
+        color: #ff6347; /* Начальный цвет */
+    }
+    50% {
+        color: #00bfff; /* Промежуточный цвет */
+    }
+    100% {
+        color: #ff6347; /* Возврат к начальному цвету */
+    }
+}
+
+@keyframes pulseIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
